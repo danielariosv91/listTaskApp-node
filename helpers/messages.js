@@ -1,11 +1,9 @@
 
 import rd from 'readline'
+import inquirer from 'inquirer';
 import colors from 'colors';
-import { resolve } from 'path';
+
 const { Color } = colors;
-
-
-
 
 const showMenu = () => {
 

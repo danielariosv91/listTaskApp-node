@@ -1,15 +1,14 @@
-import { pause, showMenu } from "./helpers/messages.js"
+//import { pause, showMenu } from "./helpers/messages.js"
+import { inquirerMenu } from "./helpers/inquirer.js";
 
 
 const main = async () => {
     let option = '';
 
     do {
-        option = await showMenu();
+        option = await inquirerMenu();
 
-        console.log({option})
 
-        await pause();
     } while (option !== '0');
 }
 
