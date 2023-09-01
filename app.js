@@ -2,11 +2,15 @@ import { pause, showMenu } from "./helpers/messages.js"
 
 
 const main = async () => {
-    console.log("hola mundo")
+    let option = '';
 
-    showMenu();
-    pause();
+    do {
+        option = await showMenu();
 
+        console.log({option})
+
+        await pause();
+    } while (option !== '0');
 }
 
 main()
