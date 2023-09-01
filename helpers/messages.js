@@ -1,5 +1,10 @@
-import pkg from 'colors';
-const { Color } = pkg;
+
+import rd from 'readline'
+import colors from 'colors';
+const { Color } = colors;
+
+
+
 
 const showMenu = () => {
 
@@ -10,15 +15,42 @@ const showMenu = () => {
     console.log("====================")
 
 
-    console.log(`1. Create task`)
-    console.log(`2. List task`)
-    console.log(`3. Completed task`)
-    console.log(`4. Pending task`)
-    console.log(`5. Finish task`)
-    console.log(`6. Delete task`)
-    console.log(`0. Exit`)
+    console.log(`${'1'.green}. Create task`)
+    console.log(`${'2'.green}. List task`)
+    console.log(`${'3'.green}. Completed task`)
+    console.log(`${'4'.green}. Pending task`)
+    console.log(`${'5'.green}. Finish task`)
+    console.log(`${'6'.green}. Delete task`)
+    console.log(`${'0'.green}. Exit`);
+
+    /** Create interface */
+    const readline = rd.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    })
+
+    readline.question('Select an option: ', (option) => {
+        readline.close();
+    });
 }
 
+
+const pause = () => {
+    /** Create interface */
+    const readline = rd.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    })
+
+    readline.question(`Press ${'ENTER'.green} to continue`, (option) => {
+        console.log({ option });
+        readline.close();
+    });
+}
+
+
+
 export {
-    showMenu
+    showMenu,
+    pause
 }
