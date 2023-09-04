@@ -20,9 +20,19 @@ class Tasks {
         this._list = {};
     }
 
-    create(description = '') {
+    create = (description = '') => {
         const task = new Task(description);
         this._list[task.id] = task;
+    }
+
+    completedList = () => {
+        this.listAsArray.forEach((task, index) => {
+            const id = `${index + 1}`.green;
+            const { description, completedStatus } = task;
+            const status = ( completedStatus ) ? 'Completed'.green : 'Pending'.red;
+
+            console.log(`${id} ${description} :: ${status}`)
+        })
     }
 
     loadTaskFromArray = (tasks = []) => {

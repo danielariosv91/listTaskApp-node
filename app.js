@@ -30,7 +30,7 @@ const main = async () => {
                 console.log(tasks.listAsArray) 
             break;
             case '3':
-                 
+                console.log(tasks.completedList()) 
             break;
             case '4': 
                  
