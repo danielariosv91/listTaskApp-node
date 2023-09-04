@@ -10,15 +10,16 @@ const main = async () => {
     const tasks = new Tasks();
 
     do {
+
         option = await inquirerMenu();
 
         switch(option) {
             case '1':
                  const description = await readInput('Description: ');
-                 console.log(description)
+                 tasks.create(description);
             break;
             case '2':
-                console.log(tasks._list) 
+                console.log(tasks.listAsArray) 
             break;
             case '3':
                  
