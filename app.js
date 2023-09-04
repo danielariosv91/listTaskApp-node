@@ -1,5 +1,5 @@
 //import { pause, showMenu } from "./helpers/messages.js"
-import { inquirerMenu, readInput, pause} from "./helpers/inquirer.js";
+import { inquirerMenu, readInput, pause } from "./helpers/inquirer.js";
 import { readDatabase, saveDatabase } from "./helpers/saveFile.js";
 import { Task } from "./models/task.js";
 import { Tasks } from "./models/tasks.js";
@@ -8,39 +8,39 @@ import { Tasks } from "./models/tasks.js";
 
 const main = async () => {
     let option = '';
-    
+
     const tasks = new Tasks();
-    const taskDatabase = readDatabase(); 
+    const taskDatabase = readDatabase();
 
 
-    if(taskDatabase) {
-        tasks.loadTaskFromArray(taskDatabase); 
+    if (taskDatabase) {
+        tasks.loadTaskFromArray(taskDatabase);
     }
 
     do {
 
         option = await inquirerMenu();
 
-        switch(option) {
+        switch (option) {
             case '1':
-                 const description = await readInput('Description: ');
-                 tasks.create(description);
-            break;
+                const description = await readInput('Description: ');
+                tasks.create(description);
+                break;
             case '2':
-                console.log(tasks.listAsArray) 
-            break;
+                console.log(tasks.showAllTask())
+                break;
             case '3':
-                console.log(tasks.completedList()) 
-            break;
-            case '4': 
-                 
-            break;
+                console.log(tasks.showTaskByStatus(true))
+                break;
+            case '4':
+                console.log(tasks.showTaskByStatus(false))
+                break;
             case '5':
-                 
-            break;
+
+                break;
             case '6':
-                 
-            break;
+
+                break;
         }
 
         saveDatabase(tasks.listAsArray);

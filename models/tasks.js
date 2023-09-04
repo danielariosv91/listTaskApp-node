@@ -25,13 +25,31 @@ class Tasks {
         this._list[task.id] = task;
     }
 
-    completedList = () => {
+    showAllTask = () => {
         this.listAsArray.forEach((task, index) => {
             const id = `${index + 1}`.green;
             const { description, completedStatus } = task;
-            const status = ( completedStatus ) ? 'Completed'.green : 'Pending'.red;
+            const status = (completedStatus) ? 'Completed'.green : 'Pending'.red;
 
             console.log(`${id} ${description} :: ${status}`)
+        })
+    }
+
+    showTaskByStatus = (showCompletedTask = true) => {
+
+        this.listAsArray.forEach((task) => {
+
+            const { description, completedStatus } = task;
+            const status = (completedStatus) ? 'Completed'.green : 'Pending'.red;
+
+            if (showCompletedTask) {
+                if (completedStatus) {
+                    console.log(`${description} :: ${status}`)
+                }
+            } else {
+                console.log(`${description} :: ${status}`)
+            }
+
         })
     }
 

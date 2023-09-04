@@ -4,7 +4,7 @@ class Task {
 
     id = '';
     description = '';
-    completedDate = null;
+    completedStatus = null;
 
 
     constructor(description) {
