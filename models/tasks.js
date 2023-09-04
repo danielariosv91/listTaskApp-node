@@ -24,6 +24,12 @@ class Tasks {
         const task = new Task(description);
         this._list[task.id] = task;
     }
+
+    loadTaskFromArray = (tasks = []) => {
+        tasks.forEach(task => {
+            this._list[task.id] = task;
+        });
+    }
 }
 
 export {

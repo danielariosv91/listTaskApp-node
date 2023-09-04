@@ -1,12 +1,1 @@
-[
-    {
-        "id": "dd7f2146-0318-4783-96f0-0fa1fbfab89d",
-        "description": "Milk",
-        "completedDate": null
-    },
-    {
-        "id": "5b205981-c71a-49c9-a418-a21736572fbc",
-        "description": "Bread",
-        "completedDate": null
-    }
-]
+[{"id":"dd7f2146-0318-4783-96f0-0fa1fbfab89d","description":"Milk","completedDate":null},{"id":"5b205981-c71a-49c9-a418-a21736572fbc","description":"Bread","completedDate":null},{"id":"21249857-1e23-4572-a978-5e1a45835e29","description":"Milk","completedDate":null}]
