@@ -66,6 +66,12 @@ class Tasks {
             if (!task.completedStatus) {
                 task.completedStatus = true;
             }
+        });
+
+        this.listAsArray.forEach(task => {
+            if (!ids.includes(task.id)) {
+                this._list[task.id].completedStatus = null;
+            }
         })
     }
 
