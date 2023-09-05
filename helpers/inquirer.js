@@ -94,7 +94,7 @@ const deleteTaskList = async (tasks = []) => {
         const i = `${index + 1}`.green
 
         return {
-            vakue: task.id,
+            value: task.id,
             name: `${i} ${task.description}`,
         }
     });
@@ -113,11 +113,25 @@ const deleteTaskList = async (tasks = []) => {
     return id;
 }
 
+const confirm = async (message) => {
+    const questions = [
+        {
+            type: 'confirm',
+            name: 'ok',
+            message,
+        }
+    ]
+
+    const { ok } = await inquirer.prompt(questions);
+    return ok; 
+}
+
 
 
 export {
     inquirerMenu,
     readInput,
     pause,
-    deleteTaskList
+    deleteTaskList, 
+    confirm
 }

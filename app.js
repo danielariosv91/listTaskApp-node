@@ -1,5 +1,5 @@
 //import { pause, showMenu } from "./helpers/messages.js"
-import { inquirerMenu, readInput, pause, deleteTaskList } from "./helpers/inquirer.js";
+import { inquirerMenu, readInput, pause, deleteTaskList, confirm } from "./helpers/inquirer.js";
 import { readDatabase, saveDatabase } from "./helpers/saveFile.js";
 import { Task } from "./models/task.js";
 import { Tasks } from "./models/tasks.js";
@@ -39,8 +39,16 @@ const main = async () => {
 
                 break;
             case '6':
-                const id = await deleteTaskList(tasks.listAsArray); 
-                
+                const id = await deleteTaskList(tasks.listAsArray);
+                const wantDelete = await confirm('Ar you sure?');
+
+                console.log({id})
+
+
+                if (wantDelete) {
+                    tasks.deleteTask(id);
+                    console.log('Deleted task')
+                }
                 break;
         }
 
