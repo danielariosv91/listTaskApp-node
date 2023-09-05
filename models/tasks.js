@@ -58,6 +58,12 @@ class Tasks {
             this._list[task.id] = task;
         });
     }
+
+    deleteTask = (id = '') => {
+        if (this._list[id]) {
+            delete this._list[id];
+        }
+    }
 }
 
 export {
