@@ -59,6 +59,16 @@ class Tasks {
         });
     }
 
+    toggleStatusTask = (ids = []) => {
+        ids.forEach(id => {
+            const task = this._list[id]
+
+            if (!task.completedStatus) {
+                task.completedStatus = true;
+            }
+        })
+    }
+
     deleteTask = (id = '') => {
         if (this._list[id]) {
             delete this._list[id];

@@ -37,7 +37,8 @@ const main = async () => {
                 break;
             case '5':
                 const ids = await checkedList(tasks.listAsArray);
-                console.log(ids);
+                
+                tasks.toggleStatusTask(ids);
                 break;
             case '6':
                 const id = await deleteTaskList(tasks.listAsArray);
